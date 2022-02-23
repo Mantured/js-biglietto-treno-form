@@ -6,3 +6,12 @@ va applicato uno sconto del 33% per gli over 65.
 L'output del prezzo finale va visualizzato con massimo due decimali, per indicare centesimi sul prezzo.
 In questo caso richiederà un minimo di ricerca l'uso della select.
 Vi allego un'immagine esplicativa, ma potete usare la creatività e implementare layout diversi e creativi!! */
+
+
+const userId = document.getElementById(`user`).value;
+const distance = document.getElementById(`km`).value;
+const age = document.getElementById(`age`);
+
+console.log(userId);
+console.log(distance);
+console.log(age);

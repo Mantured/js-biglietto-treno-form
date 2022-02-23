@@ -30,7 +30,7 @@
                     <div class="col-3 bg-primary">
                         <div id="credentials" class="mb-3">
                             <label for="user" class="form-label">Nome e cognome</label>
-                            <input type="text" class="form-control" id="user" placeholder="Mario Rossi">
+                            <input type="text" class="form-control" id="user">
                         </div>
                     </div>
                     <div class="col-3">
@@ -41,9 +41,9 @@
                     </div>
                     <div class="col-3">
                         <div id="age-user">
-                            <p>Fascia d'etàe</p>
-                            <select class="form-select" aria-label="select range age">
-                                <option selected>Scegli fascia d'età</option>
+                            <label for="age"  class="form-label">Fascia d'età</label>
+                            <select id="age"class="form-select" aria-label="select range age">
+                                <option selected disabled>Scegli fascia d'età</option>
                                 <option value="1">Minorenne (0 - 17 anni)</option>
                                 <option value="2">Maggiorenne tra i +18 ed i 65 anni</option>
                                 <option value="3">Over 65 anni</option>
@@ -51,10 +51,10 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-dark text-white">
+                        <button id="submit" class="btn btn-dark text-white">
                             Genera
                         </button>
-                        <button class="btn btn-dark text-white">
+                        <button id="reset" class="btn btn-dark text-white">
                             Annulla
                         </button>
                     </div>
