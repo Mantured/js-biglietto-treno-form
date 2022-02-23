@@ -44,9 +44,9 @@
                             <label for="age"  class="form-label">Fascia d'età</label>
                             <select id="age"class="form-select" aria-label="select range age">
                                 <option selected disabled>Scegli fascia d'età</option>
-                                <option value="1">Minorenne > 18</option>
-                                <option value="2">Adulto > 65 </option>
-                                <option value="3">Over 65 anni</option>
+                                <option value="minorenne">Minorenne > 18</option>
+                                <option value="adulto">Adulto > 65 </option>
+                                <option value="anziano">Over 65 anni</option>
                             </select>
                         </div>
                     </div>
@@ -64,14 +64,14 @@
         <section id="user-ticket" class="box mb-4 border border-3 rounded-3 p-3 bg-white invisible">
             <h1>il tuo biglietto</h1>
             <div class="container">
-                <div class="row  justify-content-between">
+                <div class="row">
                     <div class="col-12 mb-3 ">
                         <h3>Dettagli passeggeri</h3>
                     </div>
-                <div class="row border-top" id="passenger">
+                <div class="row border border-2 border-start-0 border-end-0" id="passenger">
                     <div class="col-3 bg-dark text-white">
-                        <h4>Nome Passeggiero</h4>
-                        <h3 id="user-credits"></h3>
+                        <h5>Nome Passeggiero</h5>
+                        <h5 id="user-credits"></h5>
                     </div>
                     <div class="col">
                         <h5>Offerta</h5>
@@ -89,11 +89,12 @@
                         <h5>Costo biglietto</h5>
                         <h5 id="ticket-price"></h5>
                     </div>
+                    <div class="col-12 text-center">
+                        <button id="save" class="btn btn-dark text-white">Salva</button>
+                    </div>
                 </div>
-
                 </div>
             </div>
-
         </section>
     </main>
 

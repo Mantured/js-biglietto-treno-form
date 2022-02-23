@@ -17,35 +17,37 @@ function calculatorPrice() {
 
 
     let vagon = Math.floor(Math.random() * 20) + 1;
-    let id = Math.floor(Math.random() * 99999) + 1;
+    let id = Math.floor(Math.random() * 100000) + 1;
 
 
     const fullPrice = distance * 0.27;
     let ticketPrice; 
 
     ticketPrice = fullPrice * 0.83;
-    if ( age === "1" ) {
+    if ( age === "minorenne" ) {
         ticketType = `Biglietto Smart `
-    } else if (age === "3") {
+    } else if (age === "anziano") {
         ticketPrice = fullPrice * 0.67;
         ticketType = `Biglietto SmartOver `
     } else {
         ticketPrice = fullPrice;
         ticketType = `Biglietto Standard `
     }
-
+    
     ticketPrice = (ticketPrice).toFixed(2);
-
-    console.log(ticketPrice);
 
     document.getElementById(`user-credits`).innerHTML = userId;
     document.getElementById(`ticket-type`).innerHTML = ticketType;
     document.getElementById(`my-vagon`).innerHTML = vagon;
     document.getElementById(`my-id`).innerHTML = id;
-    document.getElementById(`ticket-price`).innerHTML = ticketPrice;
+    document.getElementById(`ticket-price`).innerHTML = `${ticketPrice}€`;
     document.getElementById(`user-ticket`).classList.remove(`invisible`);
 
     console.log(userId);
+    console.log(ticketType);
+    console.log(vagon);
+    console.log(id);
+    console.log(ticketPrice);
 }
 
 
@@ -54,12 +56,32 @@ function clear() {
     document.getElementById(`credentials`).innerHTML+= "";
     document.getElementById(`tripdistance`).innerHTML += "";
     document.getElementById(`age`).innerHTML += "";
+
+
 }
-
-
 
 document.getElementById(`submit`).addEventListener(`click`, calculatorPrice);
 document.getElementById(`reset`).addEventListener(`click`, clear);
+
+
+function saveInfo() {
+    let newRow = document.createElement(`div`);
+    const saveUser = document.getElementById(`user`).value;
+    const saveKm = document.getElementById(`km`).value;
+    const saveAge = document.getElementById(`age`).value;
+    const savePrice = document.getElementById(`ticket-price`).value;
+
+    newRow.innerHTML = `<span> ${saveUser}</span> <span> ${saveKm} Km </span> <span> ${saveAge} </span> <span> ${savePrice} € </span>`;
+    document.querySelector(`#user-ticket`).appendChild(newRow); 
+} 
+
+
+document.getElementById(`save`).addEventListener(`click`, saveInfo);
+
+
+
+
+
 
 
 
