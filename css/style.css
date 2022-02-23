@@ -1,0 +1,15 @@
+main {
+  background-color: red;
+  /* height: 60vh; */
+}
+
+#age-user > p {
+  margin-bottom: 8px;
+}
+#calculator {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}

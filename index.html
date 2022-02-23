@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Montserrat google font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+        <!-- Custom file css -->
+        <link rel="stylesheet" href="css/style.css">
+
+
+
+    <title>Ticket Train</title>
+</head>
+<body>
+
+
+    <main>
+        <section id="calculator">
+            <h1>calcola il prezzo del tuo biglietto</h1>
+            <div class="contanier">
+                <div class="row justify-content-evenly ">
+                    <div class="col-3 bg-primary">
+                        <div id="credentials" class="mb-3">
+                            <label for="user" class="form-label">Nome e cognome</label>
+                            <input type="text" class="form-control" id="user" placeholder="Mario Rossi">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="tripdistance" class="mb-3">
+                            <label for="km" class="form-label">Km da percorrere</label>
+                            <input type="text" class="form-control" id="km" placeholder="inserire quanti km si vogliono percorrere">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="age-user">
+                            <p>Fascia d'etàe</p>
+                            <select class="form-select" aria-label="select range age">
+                                <option selected>Scegli fascia d'età</option>
+                                <option value="1">Minorenne (0 - 17 anni)</option>
+                                <option value="2">Maggiorenne tra i +18 ed i 65 anni</option>
+                                <option value="3">Over 65 anni</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-dark text-white">
+                            Genera
+                        </button>
+                        <button class="btn btn-dark text-white">
+                            Annulla
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="user-ticket">
+            <h1>il tuo biglietto</h1>
+            <div class="container">
+                <div class="row  justify-content-between">
+                    <div class="col-12">
+                        <h3>Dettagli passeggeri</h3>
+                    </div>
+                    <div class="col-4">
+                        <p>Nome Passeggiero</p>
+                    </div>
+                    <div class="col">Offerta</div>
+                    <div class="col">Carrozza</div>
+                    <div class="col">Codice CP</div>
+                    <div class="col">Costo biglietto</div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
