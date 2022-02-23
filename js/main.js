@@ -7,6 +7,7 @@ L'output del prezzo finale va visualizzato con massimo due decimali, per indicar
 In questo caso richiederà un minimo di ricerca l'uso della select.
 Vi allego un'immagine esplicativa, ma potete usare la creatività e implementare layout diversi e creativi!! */
 
+document.getElementById(`user-ticket`).style.display = "none";
 
 function calculatorPrice()  {
     const userId = document.getElementById(`user`).value;
@@ -14,8 +15,11 @@ function calculatorPrice()  {
     const age = document.getElementById(`age`).value;
     let ticketType = "";
 
+    let vagon = Math.floor(Math.random() * 20) + 1;
+    let id = Math.floor(Math.random() * 99999) + 1;
+
     const fullPrice = distance * 0.27;
-    let ticketPrice; //dichiarazione senza inizializzazione
+    let ticketPrice; 
 
     if ( age === "1" ) {
         ticketPrice = fullPrice * 0.83;
@@ -28,28 +32,19 @@ function calculatorPrice()  {
         ticketType = `Biglietto Standard `
     }
 
+    ticketPrice = (ticketPrice).toFixed(2);
+
     console.log(ticketPrice);
 
     document.getElementById(`user-credits`).innerHTML = userId;
     document.getElementById(`ticket-type`).innerHTML = ticketType;
-    
+    document.getElementById(`my-vagon`).innerHTML = vagon;
+    document.getElementById(`my-id`).innerHTML = id;
+    document.getElementById(`ticket-price`).innerHTML = ticketPrice;
+    document.getElementById(`user-ticket`).style.display = "";
 }
 
 document.getElementById(`submit`).addEventListener(`click`, calculatorPrice);
-
-
-
-
-
-/* const userId = document.getElementById(`user`).value;
-const distance = document.getElementById(`km`).value;
-const age = document.getElementById(`age`).value; */
-
-
-/* console.log(userId);
-console.log(distance);
-console.log(age); */
-
 
 
 
