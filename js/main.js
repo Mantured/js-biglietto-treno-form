@@ -7,20 +7,24 @@ L'output del prezzo finale va visualizzato con massimo due decimali, per indicar
 In questo caso richiederà un minimo di ricerca l'uso della select.
 Vi allego un'immagine esplicativa, ma potete usare la creatività e implementare layout diversi e creativi!! */
 
-function calculatorPrice()  {
+function calculatorPrice() {
+    /* const calculator = document.querySelector(`calculator`); */
     const userId = document.getElementById(`user`).value;
     const distance = document.getElementById(`km`).value;
     const age = document.getElementById(`age`).value;
+
     let ticketType = "";
+
 
     let vagon = Math.floor(Math.random() * 20) + 1;
     let id = Math.floor(Math.random() * 99999) + 1;
 
+
     const fullPrice = distance * 0.27;
     let ticketPrice; 
 
+    ticketPrice = fullPrice * 0.83;
     if ( age === "1" ) {
-        ticketPrice = fullPrice * 0.83;
         ticketType = `Biglietto Smart `
     } else if (age === "3") {
         ticketPrice = fullPrice * 0.67;
@@ -39,16 +43,23 @@ function calculatorPrice()  {
     document.getElementById(`my-vagon`).innerHTML = vagon;
     document.getElementById(`my-id`).innerHTML = id;
     document.getElementById(`ticket-price`).innerHTML = ticketPrice;
-    document.getElementById(`user-ticket`).classList.remove (`invisible`);
+    document.getElementById(`user-ticket`).classList.remove(`invisible`);
+
+    console.log(userId);
 }
+
 
 function clear() {
     document.getElementById(`user-ticket`).classList.add(`invisible`);
+    document.getElementById(`credentials`).innerHTML+= "";
+    document.getElementById(`tripdistance`).innerHTML += "";
+    document.getElementById(`age`).innerHTML += "";
 }
+
+
 
 document.getElementById(`submit`).addEventListener(`click`, calculatorPrice);
 document.getElementById(`reset`).addEventListener(`click`, clear);
-
 
 
 

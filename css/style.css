@@ -1,6 +1,6 @@
 main {
   background-color: blueviolet;
-  /* height: 60vh; */
+  height: 100vh;
 }
 
 #calculator {
@@ -9,4 +9,10 @@ main {
 
 h1 {
   text-align: center;
+  text-transform: uppercase;
+}
+
+.box {
+  width: 70vw;
+  box-shadow: 10px 5px 5px black;
 }
