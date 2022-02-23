@@ -8,10 +8,49 @@ In questo caso richiederà un minimo di ricerca l'uso della select.
 Vi allego un'immagine esplicativa, ma potete usare la creatività e implementare layout diversi e creativi!! */
 
 
-const userId = document.getElementById(`user`).value;
-const distance = document.getElementById(`km`).value;
-const age = document.getElementById(`age`);
+function calculatorPrice()  {
+    const userId = document.getElementById(`user`).value;
+    const distance = document.getElementById(`km`).value;
+    const age = document.getElementById(`age`).value;
+    let ticketType = "";
 
-console.log(userId);
+    const fullPrice = distance * 0.27;
+    let ticketPrice; //dichiarazione senza inizializzazione
+
+    if ( age === "1" ) {
+        ticketPrice = fullPrice * 0.83;
+        ticketType = `Biglietto Smart `
+    } else if (age === "3") {
+        ticketPrice = fullPrice * 0.67;
+        ticketType = `Biglietto SmartOver `
+    } else {
+        ticketPrice = fullPrice;
+        ticketType = `Biglietto Standard `
+    }
+
+    console.log(ticketPrice);
+
+    document.getElementById(`user-credits`).innerHTML = userId;
+    document.getElementById(`ticket-type`).innerHTML = ticketType;
+    
+}
+
+document.getElementById(`submit`).addEventListener(`click`, calculatorPrice);
+
+
+
+
+
+/* const userId = document.getElementById(`user`).value;
+const distance = document.getElementById(`km`).value;
+const age = document.getElementById(`age`).value; */
+
+
+/* console.log(userId);
 console.log(distance);
-console.log(age);
+console.log(age); */
+
+
+
+
+
