@@ -7,8 +7,6 @@ L'output del prezzo finale va visualizzato con massimo due decimali, per indicar
 In questo caso richiederà un minimo di ricerca l'uso della select.
 Vi allego un'immagine esplicativa, ma potete usare la creatività e implementare layout diversi e creativi!! */
 
-document.getElementById(`user-ticket`).style.display = "none";
-
 function calculatorPrice()  {
     const userId = document.getElementById(`user`).value;
     const distance = document.getElementById(`km`).value;
@@ -41,10 +39,15 @@ function calculatorPrice()  {
     document.getElementById(`my-vagon`).innerHTML = vagon;
     document.getElementById(`my-id`).innerHTML = id;
     document.getElementById(`ticket-price`).innerHTML = ticketPrice;
-    document.getElementById(`user-ticket`).style.display = "";
+    document.getElementById(`user-ticket`).classList.remove (`invisible`);
+}
+
+function clear() {
+    document.getElementById(`user-ticket`).classList.add(`invisible`);
 }
 
 document.getElementById(`submit`).addEventListener(`click`, calculatorPrice);
+document.getElementById(`reset`).addEventListener(`click`, clear);
 
 
 
